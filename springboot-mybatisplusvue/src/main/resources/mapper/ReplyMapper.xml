@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.arien.dao.ReplyMapper">
+
+    <!--void saveReply(Integer rid, String rmessage, String rcreated, Integer ruid);-->
+    <insert id="saveReply">
+        insert into m_reply (rid,rmessage,rcreated,ruid)
+                    value
+                    (#{param1}, #{param2}, #{param3}, #{param4})
+    </insert>
+
+    <!--List<Reply> getReply();-->
+    <select id="getReply" resultType="top.arien.entity.Reply">
+        select rid,rmessage,rcreated,ruid from m_reply order by rcreated desc
+    </select>
+
+</mapper>

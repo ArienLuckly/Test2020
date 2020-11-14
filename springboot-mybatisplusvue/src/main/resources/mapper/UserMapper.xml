@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.arien.dao.UserMapper">
+
+    <!--public Integer selectByEmail(String emial);-->
+    <select id="selectByEmail"  resultType="Integer">
+        select count(*) from m_user where email = #{email}
+    </select>
+
+    <!--public Integer selectByName(String name);-->
+    <select id="selectByName" resultType="Integer" >
+        select count(*) from m_user where username = #{username}
+    </select>
+
+   <!-- public void saveUser(User user);-->
+    <insert id="saveUser">
+        insert into m_user ( email, username, `password`, status,avatar,aid)
+                       VALUES
+                      (#{email},#{username}, #{password}, 0, #{avatar},2);
+    </insert>
+
+   <!-- public List<Blog> searchTitle(String query);-->
+    <select id="searchTitle" resultType="top.arien.entity.Blog">
+        select * from m_blog  where title like '%${query}%'
+    </select>
+
+   <!-- public Integer selectAidById(Integer id);-->
+    <select id="selectAidById" resultType="Integer">
+        select aid from m_user where id = #{id}
+    </select>
+
+</mapper>

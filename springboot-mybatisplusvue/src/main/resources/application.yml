@@ -1,0 +1,46 @@
+#\u914D\u7F6E\u6570\u636E\u6E90
+spring:
+  datasource:
+    username: root
+    password: 1234567!
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/myblogs01?useUnicode=true&useSSL=false&characterEncoding=utf8&serverTimezone=Asia/Shanghai
+  redis:
+    host: localhost
+    port: 6379
+    timeout: 10s
+    lettuce:
+      pool:
+        min-idle: 0
+        max-idle: 8
+        max-active: 8
+        max-wait: -1ms
+
+
+
+server:
+  port: 8888
+
+#\u6253\u5F00sql\u65E5\u5FD7
+logging:
+  level:
+    root: info
+    top.arien.dao: debug
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**Mapper.xml
+  map-underscore-to-camel-case: false
+
+#加密密钥
+arien:
+  jwt:
+    # \u52A0\u5BC6\u79D8\u94A5
+    secret: f4e2e52034348f86b67cde581c0f9eb5
+    # token\u6709\u6548\u65F6\u957F\uFF0C7\u5929\uFF0C\u5355\u4F4D\u79D2
+    expire: 604800
+    header: Authorization
+
+
+
+
+
+
