@@ -1,22 +1,19 @@
 package top.arien.shiro;
 
-import cn.hutool.core.bean.BeanUtil;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
-import org.apache.shiro.realm.SimpleAccountRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import top.arien.dao.UserDAO;
 import top.arien.dao.UserMapper;
 import top.arien.entity.User;
 import top.arien.util.JwtUtils;
-import top.arien.util.ShiroUtil;
+
 
 /**
  * @author Arien-天柱
